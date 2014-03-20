@@ -171,8 +171,8 @@ This will result in the following object
 name:'Parent Name',
 property1:'Taller than children',
 kids:[
-	{id:1, name:'Billie',property1:'Fast,type:'Good'},
-	{id:2, name:'Jimmy', property1:'Slow',type:'Bad}
+	{id:1, name:'Billie',property1:'Fast',type:'Good'},
+	{id:2, name:'Jimmy', property1:'Slow',type:'Bad'}
 ]
 ```
 Additionally, you can call the methods you have added to the Datasets and Datastructure for example
