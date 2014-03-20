@@ -13,7 +13,7 @@ to install throwarm use npm → npm install throwarm
 Using throwarm is a three part process 1) creating throwarm objects, 2) creating a Datastructure, 3) applying data to the Datastructure
 
 ###Creating throwarm objects
-There are two different types of throwarm objects: Datagrams and Datasets.   Datagrams are objects that hold a single result, analogous to a table row.  Datasets are array objects that hold sets of Datagrams,they are analogous to a table. Generally, each datagram and dataset function located in separate files.
+There are two different types of throwarm objects: Datagrams and Datasets.   Datagrams are objects that hold a single result, analogous to a table row.  Datasets are array objects that hold sets of Datagrams,they are analogous to a table. 
 
 ####Datagrams
 To create a Datagram, you create an function,  make a base call to the datagram constructor and then set the default field map.  The default field map is matches the fields in the database table the datagram represents.
@@ -38,6 +38,7 @@ Parent.prototype.constructor = Parent;
 
 ####Datasets
 Dataset creation uses slightly different syntax.  Since datasets do not have fields they do not have a field map.  They do however have a type name that should match the name of the Dataset.
+
 For Example:
 ```javascript
 function Children() {
@@ -124,6 +125,7 @@ parentWithKids.fieldMap.kids.items = function () {
 ```
 As you can see the fieldMap for the Parent Datagram is extended by adding a new Children datagram to the field map as kids.  The Children datagram is extended by setting the key which is the name of the field that will be used to identify unique rows. For each unique key value a new element (defined by items) will be created.  Items is a function that returns the type of datagram to be created.
 You can use multiple Datastructures to describe the same data.
+
 For instance:
 ```javascript
 var kidsWithParent = new Childern();
@@ -134,7 +136,7 @@ kidsWithParent.items= function() {
 	return child;
 };
 ```
-##Applying Dat
+##Applying Data
 Once a Datastructure has been created you can add data to the objects by invoking the fill method supplying an array of structures.
 
 For example the following data may have come from the following SQL Query: 
