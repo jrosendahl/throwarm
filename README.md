@@ -48,7 +48,7 @@ function Children() {
 ```
 
 ####Extending Datagrams
-Once you have created the base datagram they can be extended by adding functions to the objects prototype.  
+Once you have created the base datagram they can be extended by adding functions to the objects prototype.
 For example the following code defines a Datagram and extends it.
 ```javascript
 function Child() {
@@ -122,8 +122,9 @@ parentWithKids.fieldMap.kids.items = function () {
 	return child;
 };
 ```
-As you can see the fieldMap for the Parent Datagram is extended by adding a new Children datagram to the field map as kids.  The Children datagram is extended by setting the key which is the name of the field that will be used to identify unique rows. For each unique key value a new element (defined by items) will be created.  Items is a function that returns the type of datagram to be created.  
-You can use multiple Datastructures to describe the same data.  For instance:
+As you can see the fieldMap for the Parent Datagram is extended by adding a new Children datagram to the field map as kids.  The Children datagram is extended by setting the key which is the name of the field that will be used to identify unique rows. For each unique key value a new element (defined by items) will be created.  Items is a function that returns the type of datagram to be created.
+You can use multiple Datastructures to describe the same data.
+For instance:
 ```javascript
 var kidsWithParent = new Childern();
 kidsWithParent.key = 'childID';
@@ -133,8 +134,8 @@ kidsWithParent.items= function() {
 	return child;
 };
 ```
-##Applying Data
-Once a Datastructure has been created you can add data to the objects by invoking the fill method supplying an array of structures.  
+##Applying Dat
+Once a Datastructure has been created you can add data to the objects by invoking the fill method supplying an array of structures.
 
 For example the following data may have come from the following SQL Query: 
 ```SQL
@@ -145,14 +146,14 @@ Returns the data object below:
 data = [
 	{mainID:123
 	mainName:'Parent Name',
-	mainProperty:Taller than children',
+	mainProperty:'Taller than children',
 	childID:1,
 	childName:'Billie',
     childProperty:'Fast',
 	childType:'Good'},
 	{mainID:123
 	mainName:'Parent Name',
-	mainProperty:Taller than children',
+	mainProperty:'Taller than children',
 	childID:2,
 	childName:'Jimmy',
     childProperty:'Slow',
@@ -187,6 +188,6 @@ has(key, type) – returns true if the the key contains the type. For example ki
 ##Dataset
 has (type) – returns true if the dataset is populated by the requested type.  For example  kidsWithParents.kids.has('Child') returns true.
 
-copyReturn(sourceArray, destinationDataset)– returns the source array as the destination dataset.  
+copyReturn(sourceArray, destinationDataset)– returns the source array as the destination dataset.
 
 Questions, comments, concerns please let me know.
