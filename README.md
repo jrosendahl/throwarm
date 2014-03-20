@@ -74,7 +74,7 @@ Child.prototype.isFast = function() {
 	return self.property1 === 'Fast';
 };
 ```
-####Extending a Datasets
+####Extending Datasets
 Datasets must be extended within the definition function the following code extends the Children Dataset:
 ```javascript
 function Children() {
@@ -148,14 +148,14 @@ data = [
 	mainProperty:Taller than children',
 	childID:1,
 	childName:'Billie',
-           childProperty:'Fast',
+    childProperty:'Fast',
 	childType:'Good'},
 	{mainID:123
 	mainName:'Parent Name',
 	mainProperty:Taller than children',
 	childID:2,
 	childName:'Jimmy',
-           childProperty:'Slow',
+    childProperty:'Slow',
 	childType:'Bad'},
 ]
 ```
@@ -171,7 +171,7 @@ name:'Parent Name',
 property1:'Taller than children',
 kids:[
 	{id:1, name:'Billie',property1:'Fast,type:'Good'},
-	{id:2:name:'Jimmy', property1:'Slow',type:'Bad}
+	{id:2, name:'Jimmy', property1:'Slow',type:'Bad}
 ]
 ```
 Additionally, you can call the methods you have added to the Datasets and Datastructure for example
