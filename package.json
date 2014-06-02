@@ -1,6 +1,6 @@
 {
   "name": "throwarm",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Thowarm allows you to parse data sets like SQL results into re-useable, hierarchal objects.",
   "main": "index.js",
   "directories": {
