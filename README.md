@@ -234,6 +234,7 @@ See the test file for more examples.
 
 ###Dataset
 **has(type)** - returns true if the dataset is populated by the requested type.  For example  kidsWithParents.kids.has('Child') returns true.
+
 **copyReturn(sourceArray, destinationDataset)** - returns the source array as the destination dataset.
 
 Questions, comments, concerns please let me know.
