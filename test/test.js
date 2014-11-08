@@ -54,6 +54,15 @@ row[3].calculate = 'toasted';
 var Datagram = require('../index').Datagram;
 var Dataset = require('../index').Dataset;
 var Calc = require('../index').Calc;
+var Extention = require('../index').Extention;
+
+function Ext() {
+	this.hello = function() {
+		return 'hello';
+	};
+}
+Ext.prototype = new Extention();
+Ext.prototype.constructor = Ext;
 
 
 // This section creates the data set and datagram objects, normally each of these would be in a sperate file
@@ -64,7 +73,8 @@ function Parent() {
 	this.fieldMap =  {
 		id:'mainID',
 		name: 'mainName',
-		property1: 'mainProperty'
+		property1: 'mainProperty',
+		extention: new Ext()
 	};
 
 }
@@ -190,6 +200,9 @@ describe('The Throwarm Library', function() {
 			parentWithKids.has('kids', 'NA').should.be.false;
 			parentWithKids.has('NA', 'NA').should.be.false;
 		});
+		it('should have an extention that returns hello', function() {
+			parentWithKids.extention.hello().should.equal('hello');
+		});
 
 	});
 
@@ -209,4 +222,9 @@ describe('The Throwarm Library', function() {
 		});
 	});
 });
+
+
+
+
+
 
