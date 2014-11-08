@@ -54,14 +54,14 @@ row[3].calculate = 'toasted';
 var Datagram = require('../index').Datagram;
 var Dataset = require('../index').Dataset;
 var Calc = require('../index').Calc;
-var Extention = require('../index').Extention;
+var Extension = require('../index').Extension;
 
 function Ext() {
 	this.hello = function() {
 		return 'hello';
 	};
 }
-Ext.prototype = new Extention();
+Ext.prototype = new Extension();
 Ext.prototype.constructor = Ext;
 
 
@@ -74,7 +74,7 @@ function Parent() {
 		id:'mainID',
 		name: 'mainName',
 		property1: 'mainProperty',
-		extention: new Ext()
+		extension: new Ext()
 	};
 
 }
@@ -200,8 +200,8 @@ describe('The Throwarm Library', function() {
 			parentWithKids.has('kids', 'NA').should.be.false;
 			parentWithKids.has('NA', 'NA').should.be.false;
 		});
-		it('should have an extention that returns hello', function() {
-			parentWithKids.extention.hello().should.equal('hello');
+		it('should have an extension that returns hello', function() {
+			parentWithKids.extension.hello().should.equal('hello');
 		});
 
 	});
